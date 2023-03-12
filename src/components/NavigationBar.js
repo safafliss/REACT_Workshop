@@ -10,6 +10,9 @@ function NavigationBar() {
         <NavLink to="/products" style={({isActive}) =>({textDecoration : isActive ? "none" : "underline",})}>
             Products
         </NavLink>
+        <NavLink to="products/add" style={({isActive}) =>({textDecoration : isActive ? "none" : "underline",})}>
+            add Product
+        </NavLink>
         {/* <NavLink to="/" style={({isActive}) =>({color : isActive ? "red" : "green",})}>Home</NavLink>
         <br/>
         <NavLink to="/Hello" style={({isActive}) =>({color : isActive ? "red" : "green",})}>Hello</NavLink>

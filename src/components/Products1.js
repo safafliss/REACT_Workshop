@@ -1,10 +1,21 @@
 import React, { useState, useEffect } from "react";
 import { Alert, Col, Container, Row } from "react-bootstrap";
-import products from "../products.json";
+//import products from "../products.json";
 import Product1 from "./Product1";
+import {getallProducts} from '../service/api'
 function Products1() {
   const [showBoughtAlert, setshowBoughtAlert] = useState(false);
   const [showWelcomeAlert, setshowWelcomeAlert] = useState(false);
+
+  const [products, setProducts] = useState([])
+  useEffect(()=>{
+    getProducts();
+  },[])
+  const getProducts = async () =>{
+    const response = await getallProducts();
+    console.log(response);
+    setProducts(response.data)
+  }
 
   useEffect(() => {
     setshowWelcomeAlert(true);
